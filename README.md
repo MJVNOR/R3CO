@@ -7,4 +7,4 @@ NOTE: The data folder contains the data set for material detection. The hackatho
 
 Proyecto para Call for code 2021 desafio produccion responsable y consumo verde.
 
-NOTA: La carpeta de datos contiene el conjunto de datos para la detección de materiales. La carpeta hackathon tiene todo lo de la aplicacion en flutter y el archivo vgg16Recycle.ipynb es el notebook de entrenamiento
+NOTA: La carpeta de datos contiene el conjunto de datos para la detección de materiales. La carpeta hackathon tiene todo lo de la aplicacion en flutter y el archivo vgg16Recycle.ipynb es el notebook de entrenamiento.
