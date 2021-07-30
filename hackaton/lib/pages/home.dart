@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 
-import 'package:hackaton/pages/offer.dart';
+import 'package:hackaton/offer.dart';
 
 
 class Home extends StatefulWidget {
@@ -22,27 +22,32 @@ class _HomeState extends State<Home> {
       location: 'Fake St. 20',
       amount: '20 lb.',
       description: 'Description 1',
+      user: 'User 1',
     ),
     Offer(
       material: 'Metal',
       location: 'Fake St. 1',
       amount: '30 lb.',
+      user: 'User 2',
     ),
     Offer(
       material: 'Cardboard',
       location: 'Fake St. 4',
       amount: '15 lb.',
+      user: 'User 3',
     ),
-    // Offer(
-    //   material: 'Glass',
-    //   location: 'Fake St. 5',
-    //   amount: '22 lb.',
-    // ),
-    // Offer(
-    //   material: 'Cardboard',
-    //   location: 'Fake St. 4',
-    //   amount: '15 lb.',
-    // ),
+    Offer(
+      material: 'Glass',
+      location: 'Fake St. 5',
+      amount: '22 lb.',
+      user: 'User 4',
+    ),
+    Offer(
+      material: 'Cardboard',
+      location: 'Fake St. 4',
+      amount: '15 lb.',
+      user: 'User 5',
+    ),
     // Offer(
     //   material: 'Cardboard',
     //   location: 'Fake St. 4',
@@ -90,7 +95,6 @@ class _HomeState extends State<Home> {
       child: Column(
 
         children: [
-          SizedBox(height: 16.0),
           _city(),
           _offers(),
         ],
@@ -104,7 +108,7 @@ class _HomeState extends State<Home> {
       child: TextButton.icon(
         onPressed: () {},
         icon: Icon(Icons.location_city),
-        label: Text('My City'),
+        label: Text('City Name'),
       ),
     );
   }
@@ -121,7 +125,7 @@ class _HomeState extends State<Home> {
           _bottomAction(Icons.check, 'Accepted', '/accepted'),
           SizedBox(width: 32.0),
           _bottomAction(Icons.maps_home_work, 'Map', '/map'),
-          _bottomAction(Icons.settings, 'Settings', '/settings'),
+          _bottomAction(Icons.camera_alt, 'Camera', '/camera'),
         ],
       ),
     );
@@ -160,11 +164,8 @@ class _HomeState extends State<Home> {
 
   Widget _offerCard(Offer offer) {
     return Card(
-
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-
       margin: EdgeInsets.all(8.0),
-
       elevation: 5,
 
       child: Column(
@@ -198,7 +199,13 @@ class _HomeState extends State<Home> {
                 Text('${offer.price}'),
               ],
             ),
-            leading: Icon(Icons.face),
+            leading: Column(
+              children: [
+                Icon(Icons.face),
+                SizedBox(height: 8.0),
+                Text('${offer.user}'),
+              ],
+            ),
         ),
 
           TextButton.icon(
@@ -326,7 +333,7 @@ class _HomeState extends State<Home> {
                   setState(() {
                     offers.insert(0, Offer(material: material, location: 'Location', 
                                         amount: amount, description: description, 
-                                        price: price));
+                                        price: price, user: 'Me'));
                   });
                   Navigator.of(context).pop();
                 }

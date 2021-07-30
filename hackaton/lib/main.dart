@@ -8,6 +8,7 @@ import 'package:hackaton/pages/map.dart';
 import 'package:hackaton/pages/my_offers.dart';
 import 'package:hackaton/pages/select_location.dart';
 import 'package:hackaton/pages/settings.dart';
+import 'package:hackaton/pages/camera.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,13 +26,14 @@ class MyApp extends StatelessWidget {
       ),
 
       routes: {
-        '/': (context) => Login(),
-        '/home': (context) => Home(),
+        // '/': (context) => Login(),
+        '/': (context) => Home(),
         '/add': (context) => AddOfferPage(),
         '/my_offers': (context) => MyOffers(),
         '/accepted': (context) => Accepted(),
         '/map': (context) => MapScreen(),
         '/settings': (context) => Settings(),
+        '/camera': (context) => CameraPage(),
         '/select_location': (context) => SelectLocation(),
       },
 
